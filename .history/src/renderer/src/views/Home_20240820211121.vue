@@ -1,8 +1,6 @@
 <template>
   <div>Home首页</div>
   <button @click="login">登录</button>
-  <button @click="wss">消息列表</button>
-  <button @click="down">下载中心</button>
 </template>
 
 <script setup>
@@ -29,8 +27,8 @@ const wss = () => {
 }
 
 const down = () => {
-  electron.ipcRenderer.invoke('ws', {
-    name: 'down'
+  electron.ipcRenderer.invoke('down', {
+    name: 'web'
   })
 }
 </script>

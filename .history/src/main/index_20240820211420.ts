@@ -33,8 +33,8 @@ function createWindow(): void {
   ipcMain.handle('ws', (event, msg) => {
     if (msg.name == 'web') {
       const listWindow = new BrowserWindow({
-        width: 50,
-        height: 300,
+        width: 900,
+        height: 670,
         show: false,
         autoHideMenuBar: true,
         ...(process.platform === 'linux' ? { icon } : {}),
@@ -47,8 +47,6 @@ function createWindow(): void {
       listWindow.on('ready-to-show', () => {
         listWindow.show()
       })
-      // 这里关联上vue router的hash路径
-      listWindow.loadURL(process.env['ELECTRON_RENDERER_URL'] + '/#/list')
     } else if (msg.name == 'down') {
       console.log('下载任务')
     }

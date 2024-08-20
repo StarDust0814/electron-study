@@ -47,7 +47,7 @@ function createWindow(): void {
       listWindow.on('ready-to-show', () => {
         listWindow.show()
       })
-      // 这里关联上vue router的hash路径
+
       listWindow.loadURL(process.env['ELECTRON_RENDERER_URL'] + '/#/list')
     } else if (msg.name == 'down') {
       console.log('下载任务')
