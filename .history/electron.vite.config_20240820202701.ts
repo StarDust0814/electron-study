@@ -13,20 +13,18 @@ export default defineConfig({
     resolve: {
       alias: {
         '@renderer': resolve('src/renderer/src'),
-        '@store': resolve('src/renderer/src/store'),
-        '@utils': resolve('src/renderer/src/utils'),
-        '@api': resolve('src/renderer/src/api')
+        '@store': resolve('src/renderer/src/store')
       }
     },
-    server: {
-      proxy: {
-        '/api': {
-          target: 'http://uat.crm.xuexiluxian.cn',
-          changeOrigin: true,
+    server:{
+      "proxy":{
+        "/api":{
+          target:'http://uat.crm.xuexiluxian.cn',
+          changeOrigin:true,
           rewrite: (path) => path.replace(/^\/api/, '')
         }
       }
-    },
+    }
     plugins: [vue()]
   }
 })
