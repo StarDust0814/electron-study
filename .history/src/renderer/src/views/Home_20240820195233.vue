@@ -1,0 +1,11 @@
+<template>
+    <div>Home首页</div>
+    <button @click="jump">按钮</button>
+</template>
+
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+</script>
+
+<style lang="scss" scoped></style>

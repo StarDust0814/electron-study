@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+    <div>List页面</div>
 </template>
 
 <script setup></script>
